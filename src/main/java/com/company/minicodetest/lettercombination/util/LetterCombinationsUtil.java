@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public abstract class LetterCombinationsUtil {
-    private static CharacterStringConverter characterStringConverter = new CharacterStringConverter();
-
     private static Map<Integer, String> map;
 
     public static String combine(Integer... nums) {

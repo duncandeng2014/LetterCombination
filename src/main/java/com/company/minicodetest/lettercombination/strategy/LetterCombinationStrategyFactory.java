@@ -6,7 +6,7 @@ import java.util.List;
 public enum LetterCombinationStrategyFactory {
     instance;
 
-    private List<LetterCombinationStrategy> strategies = new LinkedList<LetterCombinationStrategy>() {
+    private final List<LetterCombinationStrategy> strategies = new LinkedList<LetterCombinationStrategy>() {
         {
           add(new ZeroTo9Strategy());
           add(new ZeroTo99Strategy());

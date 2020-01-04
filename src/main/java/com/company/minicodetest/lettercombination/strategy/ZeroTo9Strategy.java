@@ -2,11 +2,12 @@ package com.company.minicodetest.lettercombination.strategy;
 
 import com.company.minicodetest.lettercombination.util.LetterCombinationsUtil;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ZeroTo9Strategy implements LetterCombinationStrategy {
-    private Map<Integer, String> map = new HashMap<Integer, String>(11) {
+    private static final Map<Integer, String> MAP = new HashMap<Integer, String>(11) {
         {
             put(0, " ");
             put(1, " ");
@@ -22,7 +23,7 @@ public class ZeroTo9Strategy implements LetterCombinationStrategy {
     };
 
     public ZeroTo9Strategy() {
-        LetterCombinationsUtil.setMap(map);
+        LetterCombinationsUtil.setMap(MAP);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class ZeroTo9Strategy implements LetterCombinationStrategy {
 
     @Override
     public Map<Integer, String> getMap() {
-        return map;
+        return Collections.unmodifiableMap(MAP);
     }
 
     @Override

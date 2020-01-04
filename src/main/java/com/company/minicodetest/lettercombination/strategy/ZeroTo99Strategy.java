@@ -2,12 +2,13 @@ package com.company.minicodetest.lettercombination.strategy;
 
 import com.company.minicodetest.lettercombination.util.LetterCombinationsUtil;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
 public class ZeroTo99Strategy implements LetterCombinationStrategy {
-    private Map<Integer, String> map = new HashMap<Integer, String>(101) {
+    private static final Map<Integer, String> MAP = new HashMap<Integer, String>(101) {
         {
             put(0, " ");
             put(1, " ");
@@ -25,11 +26,11 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
     public ZeroTo99Strategy() {
         IntStream.rangeClosed(10, 99).forEach(num -> {
             String key = String.valueOf(num).substring(0, 1);
-            String value = map.get(Integer.valueOf(key));
-            map.put(num, value);
+            String value = MAP.get(Integer.valueOf(key));
+            MAP.put(num, value);
         });
 
-        LetterCombinationsUtil.setMap(map);
+        LetterCombinationsUtil.setMap(MAP);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
 
     @Override
     public Map<Integer, String> getMap() {
-        return map;
+        return Collections.unmodifiableMap(MAP);
     }
 
     @Override
