@@ -11,6 +11,9 @@ public abstract class LetterCombinationsUtil {
     private static Map<Integer, String> map;
 
     public static String combine(Integer... nums) {
+        if (nums == null || nums.length == 0)
+            throw new NullPointerException("digits is null or empty");
+
         StringBuilder sb = new StringBuilder();
         LetterCombinationsUtil.combineSingleNumber(sb, 0, "", nums);
         return sb.toString().trim();

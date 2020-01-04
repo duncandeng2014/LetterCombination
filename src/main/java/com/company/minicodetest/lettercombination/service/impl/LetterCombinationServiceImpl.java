@@ -10,6 +10,9 @@ import java.util.Optional;
 public class LetterCombinationServiceImpl implements LetterCombinationService {
     @Override
     public String combine(LetterCombinationStrategy strategy, String input) {
+        if (input == null || input.trim().length() == 0)
+            throw new NullPointerException("input is null or empty");
+
         Integer[] nums = convertInput(input);
         return strategy.combine(nums);
     }
