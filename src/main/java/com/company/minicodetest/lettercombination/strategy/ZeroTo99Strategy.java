@@ -40,6 +40,6 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
 
     @Override
     public String getPromptMessage() {
-        return "Converting from 0 to 99, Please enter numbers separated by a space:";
+        return "Converting from 0 to 99, please enter numbers separated by a space:";
     }
 }

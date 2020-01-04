@@ -33,6 +33,6 @@ public class ZeroTo9Strategy implements LetterCombinationStrategy {
 
     @Override
     public String getPromptMessage() {
-        return "Converting from 0 to 9, Please enter numbers separated by a space:";
+        return "Converting from 0 to 9, please enter numbers separated by a space:";
     }
 }
