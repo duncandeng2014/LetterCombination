@@ -1,7 +1,6 @@
 package com.company.minicodetest.lettercombination.strategy;
 
 import com.company.minicodetest.lettercombination.util.LetterCombinationsUtil;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;

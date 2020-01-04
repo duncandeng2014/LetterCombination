@@ -13,7 +13,6 @@ public abstract class LetterCombinationsUtil {
 
     public static String combine(Integer... nums) {
         StringBuilder sb = new StringBuilder();
-//        Integer[] splited = LetterCombinationsUtil.splitToSingleNumbers(nums);
         LetterCombinationsUtil.combineSingleNumber(sb, 0, "", nums);
         return sb.toString().trim();
     }
@@ -25,7 +24,7 @@ public abstract class LetterCombinationsUtil {
                     charlist.forEach(c -> {
                         String current = c.toString().trim();
                         if (index == nums.length - 1)
-                            sb.append(parent + current).append(" ");
+                            sb.append(parent).append(current).append(" ");
                         combineSingleNumber(sb, index + 1, parent + current, nums);
                     })
             );
