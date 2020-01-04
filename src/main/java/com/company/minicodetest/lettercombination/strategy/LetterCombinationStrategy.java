@@ -5,4 +5,5 @@ import java.util.Map;
 public interface LetterCombinationStrategy {
     String combine(Integer... nums);
     Map<Integer, String> getMap();
+    String getPromptMessage();
 }

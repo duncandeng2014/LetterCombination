@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
-@Component
 public class ZeroTo99Strategy implements LetterCombinationStrategy {
     private Map<Integer, String> map = new HashMap<Integer, String>(101) {
         {
@@ -42,5 +41,10 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
     @Override
     public Map<Integer, String> getMap() {
         return map;
+    }
+
+    @Override
+    public String getPromptMessage() {
+        return "Converting from 0 to 99, Please enter numbers separated by a space:";
     }
 }

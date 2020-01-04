@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
 public class ZeroTo9Strategy implements LetterCombinationStrategy {
     private Map<Integer, String> map = new HashMap<Integer, String>(11) {
         {
@@ -35,5 +34,10 @@ public class ZeroTo9Strategy implements LetterCombinationStrategy {
     @Override
     public Map<Integer, String> getMap() {
         return map;
+    }
+
+    @Override
+    public String getPromptMessage() {
+        return "Converting from 0 to 9, Please enter numbers separated by a space:";
     }
 }
