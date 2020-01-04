@@ -2,11 +2,13 @@ package com.company.minicodetest.lettercombination.strategy;
 
 import com.company.minicodetest.lettercombination.util.LetterCombinationsUtil;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 
+/**
+ * Strategy of converting from 0 to 99 digits into letters.
+ */
 public class ZeroTo99Strategy implements LetterCombinationStrategy {
     private static final Map<Integer, String> MAP = new HashMap<Integer, String>(101) {
         {

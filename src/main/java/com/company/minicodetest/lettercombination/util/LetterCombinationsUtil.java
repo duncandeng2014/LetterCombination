@@ -1,11 +1,12 @@
 package com.company.minicodetest.lettercombination.util;
 
-import javafx.util.converter.CharacterStringConverter;
-
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Provide core function to combine the characters represent by digits into letters.
+ */
 public abstract class LetterCombinationsUtil {
     private static Map<Integer, String> map;
 

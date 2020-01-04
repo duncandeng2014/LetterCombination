@@ -2,10 +2,12 @@ package com.company.minicodetest.lettercombination.strategy;
 
 import com.company.minicodetest.lettercombination.util.LetterCombinationsUtil;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Strategy of converting from 0 to 9 digits into letters.
+ */
 public class ZeroTo9Strategy implements LetterCombinationStrategy {
     private static final Map<Integer, String> MAP = new HashMap<Integer, String>(11) {
         {
