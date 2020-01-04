@@ -32,11 +32,6 @@ public class ZeroTo9Strategy implements LetterCombinationStrategy {
     }
 
     @Override
-    public Map<Integer, String> getMap() {
-        return Collections.unmodifiableMap(MAP);
-    }
-
-    @Override
     public String getPromptMessage() {
         return "Converting from 0 to 9, Please enter numbers separated by a space:";
     }
