@@ -15,11 +15,6 @@ public class StartMain implements CommandLineRunner {
     @Autowired
     private LetterCombinationService letterCombinationService;
 
-    private void combine(LetterCombinationStrategy strategy, String line) {
-        String result = letterCombinationService.combine(strategy, line);
-        System.out.println("Result:" + result);
-    }
-
     @Override
     public void run(String... args)  {
         List<LetterCombinationStrategy> strategies = LetterCombinationStrategyFactory.instance.getStrategies();
@@ -27,7 +22,8 @@ public class StartMain implements CommandLineRunner {
             Scanner sc = new Scanner(System.in);
             System.out.println(strategy.getPromptMessage());
             String line = sc.nextLine();
-            combine(strategy, line);
+            String result = letterCombinationService.combine(strategy, line);
+            System.out.println("Result:" + result);
             System.out.println("==========================");
         }
     }
