@@ -31,12 +31,11 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
             String value = MAP.get(Integer.valueOf(key));
             MAP.put(num, value);
         });
-
-        LetterCombinationsUtil.setMap(MAP);
     }
 
     @Override
     public String combine(Integer... nums) {
+        LetterCombinationsUtil.setMap(MAP);
         return LetterCombinationsUtil.combine(nums);
     }
 

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Scanner;
 
 @Component
@@ -15,16 +14,34 @@ public class StartMain implements CommandLineRunner {
     @Autowired
     private LetterCombinationService letterCombinationService;
 
+    private LetterCombinationStrategy getStrategyByOption(Scanner sc, String option) {
+        String line = sc.nextLine();
+        while (line == null || line.trim().length() == 0) {
+            System.out.println("You input wrong option, please input 1 or 2");
+            line = sc.nextLine();
+        }
+
+        return LetterCombinationStrategyFactory.instance.getStrategy(line);
+    }
+
     @Override
     public void run(String... args)  {
-        List<LetterCombinationStrategy> strategies = LetterCombinationStrategyFactory.instance.getStrategies();
-        for (LetterCombinationStrategy strategy : strategies) {
+        if (args != null && args.length > 0) {
             Scanner sc = new Scanner(System.in);
-            System.out.println(strategy.getPromptMessage());
-            String line = sc.nextLine();
-            String result = letterCombinationService.combine(strategy, line);
-            System.out.println("Result:" + result);
-            System.out.println("==========================");
+            String line = null;
+            switch (args[0]) {
+                case "-c":
+                    System.out.println("Choose an option:\n  " +
+                            "1: Convert digits from 0 to 9\n  " +
+                            "2: Convert digits from 0 to 99");
+                    LetterCombinationStrategy strategy = getStrategyByOption(sc, line);
+                    System.out.println(strategy.getPromptMessage());
+                    line = sc.nextLine();
+                    String result = letterCombinationService.combine(strategy, line);
+                    System.out.println("Result:" + result);
+                    System.out.println("==========================");
+                    break;
+            }
         }
     }
 }
