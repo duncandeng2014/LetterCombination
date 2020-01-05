@@ -9,7 +9,7 @@ import java.util.stream.Stream;
  * Provide core arithmetic to combine the characters represent by digits into letters.
  */
 public abstract class LetterCombinationsUtil {
-    private static ReentrantLock lock = new ReentrantLock();
+    private static ReentrantLock lock = new ReentrantLock(true);
 
     public static String combine(Map<Integer, String> map, Integer... nums) {
         if (nums == null || nums.length == 0)
