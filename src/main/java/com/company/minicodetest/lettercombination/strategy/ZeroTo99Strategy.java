@@ -25,7 +25,7 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
         }
     };
 
-    public ZeroTo99Strategy() {
+    ZeroTo99Strategy() {
         IntStream.rangeClosed(10, 99).forEach(num -> {
             String key = String.valueOf(num).substring(0, 1);
             String value = MAP.get(Integer.valueOf(key));

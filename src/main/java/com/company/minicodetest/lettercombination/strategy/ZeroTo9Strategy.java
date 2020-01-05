@@ -24,6 +24,8 @@ public class ZeroTo9Strategy implements LetterCombinationStrategy {
         }
     };
 
+    ZeroTo9Strategy() {}
+
     @Override
     public String combine(Integer... nums) {
         return LetterCombinationsUtil.combine(MAP, nums);
