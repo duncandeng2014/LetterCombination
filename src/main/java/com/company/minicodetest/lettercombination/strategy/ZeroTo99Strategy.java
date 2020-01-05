@@ -35,8 +35,7 @@ public class ZeroTo99Strategy implements LetterCombinationStrategy {
 
     @Override
     public String combine(Integer... nums) {
-        LetterCombinationsUtil.setMap(MAP);
-        return LetterCombinationsUtil.combine(nums);
+        return LetterCombinationsUtil.combine(MAP, nums);
     }
 
     @Override

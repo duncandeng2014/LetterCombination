@@ -26,16 +26,10 @@ public class LetterCombinationsUtilTest {
         }
     };
 
-    @Before
-    public void beforeScenario() {
-        LetterCombinationsUtil.setMap(map);
-
-    }
-
     @Test
     public void testCombine() {
         IntStream.rangeClosed(0, 9).forEach(n -> {
-            String combineResult = LetterCombinationsUtil.combine(n);
+            String combineResult = LetterCombinationsUtil.combine(map, n);
             String expected = Arrays.stream(map.get(n).split("")).collect(Collectors.joining(" "));
             assertEquals(expected.trim(), combineResult);
         });
@@ -44,16 +38,16 @@ public class LetterCombinationsUtilTest {
     @Test
     public void testCombine0To9() {
         Integer[] input = {9};
-        String result = LetterCombinationsUtil.combine(input);
+        String result = LetterCombinationsUtil.combine(map, input);
         assertEquals("w x y z", result);
 
 
         input = new Integer[]{2, 3};
-        result = LetterCombinationsUtil.combine(input);
+        result = LetterCombinationsUtil.combine(map, input);
         assertEquals("ad ae af bd be bf cd ce cf", result);
 
         input = new Integer[]{2, 3, 4};
-        result = LetterCombinationsUtil.combine(input);
+        result = LetterCombinationsUtil.combine(map, input);
         assertEquals("adg adh adi aeg aeh aei afg afh afi bdg bdh bdi beg beh bei bfg bfh bfi cdg cdh cdi ceg ceh cei cfg cfh cfi", result);
     }
 
