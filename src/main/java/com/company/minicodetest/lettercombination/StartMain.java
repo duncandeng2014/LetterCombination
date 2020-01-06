@@ -14,7 +14,7 @@ public class StartMain implements CommandLineRunner {
     @Autowired
     private LetterCombinationService letterCombinationService;
 
-    private LetterCombinationStrategy getStrategyByOption(Scanner sc, String option) {
+    private LetterCombinationStrategy getStrategyByOption(Scanner sc) {
         String line = sc.nextLine();
         while (line == null || line.trim().length() == 0) {
             System.out.println("You input wrong option, please input 1 or 2");
@@ -34,7 +34,7 @@ public class StartMain implements CommandLineRunner {
                     System.out.println("Choose an option:\n  " +
                             "1: Convert digits from 0 to 9\n  " +
                             "2: Convert digits from 0 to 99");
-                    LetterCombinationStrategy strategy = getStrategyByOption(sc, line);
+                    LetterCombinationStrategy strategy = getStrategyByOption(sc);
                     System.out.println(strategy.getPromptMessage());
                     line = sc.nextLine();
                     String result = letterCombinationService.combine(strategy, line);

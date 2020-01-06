@@ -41,7 +41,6 @@ public class LetterCombinationsUtilTest {
         String result = LetterCombinationsUtil.combine(map, input);
         assertEquals("w x y z", result);
 
-
         input = new Integer[]{2, 3};
         result = LetterCombinationsUtil.combine(map, input);
         assertEquals("ad ae af bd be bf cd ce cf", result);
