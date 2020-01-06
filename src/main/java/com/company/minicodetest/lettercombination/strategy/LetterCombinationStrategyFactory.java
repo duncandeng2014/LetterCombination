@@ -11,7 +11,7 @@ public enum LetterCombinationStrategyFactory {
         private String id;
         private LetterCombinationStrategy strategy;
 
-        private LcStrategyOption(String id, LetterCombinationStrategy strategy) {
+        LcStrategyOption(String id, LetterCombinationStrategy strategy) {
             this.id = id;
             this.strategy = strategy;
         }
