@@ -18,7 +18,8 @@ public class LetterCombinationServiceTest {
 
     @Test
     public void testCombine0To9() {
-        LetterCombinationStrategy zeroTo9Strategy = LetterCombinationStrategyFactory.instance.getStrategy(LetterCombinationStrategyFactory.LcStrategyOption.ZeroTo9);
+        LetterCombinationStrategy zeroTo9Strategy = LetterCombinationStrategyFactory.instance.getStrategy(
+                LetterCombinationStrategyFactory.LcStrategyOption.ZeroTo9);
         String input = "9";
         String result = service.combine(zeroTo9Strategy, input);
         assertEquals("w x y z", result);
@@ -30,7 +31,8 @@ public class LetterCombinationServiceTest {
 
     @Test
     public void testCombine0To99() {
-        LetterCombinationStrategy zeroTo99Strategy = LetterCombinationStrategyFactory.instance.getStrategy(LetterCombinationStrategyFactory.LcStrategyOption.ZeroTo99);
+        LetterCombinationStrategy zeroTo99Strategy = LetterCombinationStrategyFactory.instance.getStrategy(
+                LetterCombinationStrategyFactory.LcStrategyOption.ZeroTo99);
         String input = "22 33";
         String result = service.combine(zeroTo99Strategy, input);
         assertEquals("ad ae af bd be bf cd ce cf", result);
